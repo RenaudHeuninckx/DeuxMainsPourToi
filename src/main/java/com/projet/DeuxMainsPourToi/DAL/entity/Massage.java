@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.sql.Time;
+import java.util.Collection;
 
 @Entity
 @Getter @Setter
@@ -37,5 +38,9 @@ public class Massage implements Serializable {
     @Column(nullable = false, precision=5, scale=2)
     private float prix;
 
+    @OneToMany(mappedBy = "massage")
+    private Collection<Planning> plannings;
 
+    @OneToMany(mappedBy = "massage")
+    private Collection<CommentMassage> commentMassages;
 }

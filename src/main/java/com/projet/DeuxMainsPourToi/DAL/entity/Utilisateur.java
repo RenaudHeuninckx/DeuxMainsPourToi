@@ -5,9 +5,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -34,6 +36,7 @@ public class Utilisateur implements Serializable {
 
     @Column(nullable = false)
     @Size(max = 100)
+    @Email
     private String email;
 
     @Column(nullable = false, columnDefinition = "blob")
@@ -81,7 +84,18 @@ public class Utilisateur implements Serializable {
     @Column(nullable = false)
     private Date inscrit;
 
-    @Column(nullable = false)
+    @Column
     private Date supprime;
 
+    @OneToMany(mappedBy = "utilisateur")
+    private Collection<Planning> plannings;
+
+    @OneToMany(mappedBy = "utilisateur")
+    private Collection<Commande> commandes;
+
+    @OneToMany(mappedBy = "utilisateur")
+    private Collection<CommentMassage> commentMassages;
+
+    @OneToMany(mappedBy = "utilisateur")
+    private Collection<CommentProduit> commentProduits;
 }

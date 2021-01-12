@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.Collection;
 
 @Entity
 @Getter @Setter
@@ -28,4 +29,11 @@ public class Produit implements Serializable {
 
     @Column(nullable = false, precision=5, scale=2)
     private float prix;
+
+    @OneToMany(mappedBy = "produit")
+    private Collection<CommandeProduit> commandeProduits;
+
+    @OneToMany(mappedBy = "produit")
+    private Collection<CommentProduit> commentProduits;
+
 }

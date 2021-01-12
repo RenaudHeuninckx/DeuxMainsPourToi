@@ -25,6 +25,6 @@ public class CommandeProduit implements Serializable {
     @JoinColumn(name = "id_produits", nullable = false)
     private Produit produit;
 
-    @Column
+    @Column(nullable = false)
     private int qte;
 }
