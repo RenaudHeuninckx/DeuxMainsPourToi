@@ -23,7 +23,7 @@ public class UtilisateurMapper implements Mapper<UtilisateurDTO, Utilisateur> {
     private Mapper<SmallCommentProduitDTO, CommentProduit> mapperCommentProduit;
 
     @Override
-    public UtilisateurDTO toDTO(Utilisateur entity) {;
+    public UtilisateurDTO toDTO(Utilisateur entity) {
 
         if (entity == null) return null;
 
