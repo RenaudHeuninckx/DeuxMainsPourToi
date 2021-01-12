@@ -5,7 +5,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Getter @Setter
@@ -18,6 +20,18 @@ public class Planning implements Serializable {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "id_utilisateur", nullable = false)
     private Utilisateur utilisateur;
+
+    @ManyToOne
+    @JoinColumn(name = "id_massage", nullable = false)
+    private Massage massage;
+
+    @Column(name = "rendez_vous", nullable = false)
+    private Date rendezVous;
+
+    @Column
+    @Size(max = 255)
+    private String commentaire;
+
 }
