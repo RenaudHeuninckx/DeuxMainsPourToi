@@ -8,11 +8,11 @@
 		<version>2.3.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.larnak</groupId>
-	<artifactId>Tempsdor</artifactId>
+	<groupId>com.projet</groupId>
+	<artifactId>DeuxMainsPourToi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Tempsdor</name>
-	<description>APITempsdOr</description>
+	<name>DeuxMainsPourToi</name>
+	<description>Backend Site Deux Mains pour Toi</description>
 
 	<properties>
 		<java.version>11</java.version>

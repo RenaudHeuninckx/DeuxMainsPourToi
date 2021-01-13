@@ -1,4 +1,7 @@
 package com.projet.DeuxMainsPourToi.DAL.repository;
 
-public class MassageRepository {
+import com.projet.DeuxMainsPourToi.DAL.entity.Massage;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MassageRepository extends JpaRepository<Massage, Integer> {
 }

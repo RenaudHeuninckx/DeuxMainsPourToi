@@ -23,7 +23,7 @@ public class CommentProduit implements Serializable {
     private Produit produit;
 
     @ManyToOne
-    @JoinColumn(name = "id_utilisateu", nullable = false)
+    @JoinColumn(name = "id_utilisateur", nullable = false)
     private Utilisateur utilisateur;
 
     @Column(nullable = false,columnDefinition = "TEXT")

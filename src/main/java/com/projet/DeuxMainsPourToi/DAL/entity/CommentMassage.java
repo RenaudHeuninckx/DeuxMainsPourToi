@@ -24,7 +24,7 @@ public class CommentMassage implements Serializable {
     private Massage massage;
 
     @ManyToOne
-    @JoinColumn(name = "id_utilisateu", nullable = false)
+    @JoinColumn(name = "id_utilisateur", nullable = false)
     private Utilisateur utilisateur;
 
     @Column(nullable = false,columnDefinition = "TEXT")

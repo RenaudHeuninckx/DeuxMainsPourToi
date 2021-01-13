@@ -20,7 +20,7 @@ public class ProduitDTO {
     @Size(max = 255)
     private String description;
     @NotNull
-    private float prix;
+    private double prix;
     private Collection<SmallCommandeProduitDTO> commandeProduits;
     private Collection<SmallCommentProduitDTO> commentProduits;
 }

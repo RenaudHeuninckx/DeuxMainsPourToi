@@ -1,5 +1,6 @@
 package com.projet.DeuxMainsPourToi.metier.DTO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -51,10 +52,13 @@ public class UtilisateurDTO {
     @Size(max = 100)
     private String complAdr;
     @Past
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dateNaiss;
     private boolean admin;
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date inscrit;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date supprime;
     private Collection<SmallPlanningDTO> plannings;
     private Collection<SmallCommandeDTO> commandes;

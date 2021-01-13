@@ -15,5 +15,5 @@ public class SmallMassageDTO {
     private String type;
     private String description;
     private Time duree;
-    private float prix;
+    private double prix;
 }

@@ -1,5 +1,6 @@
 package com.projet.DeuxMainsPourToi.metier.DTO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,7 @@ public class CommandeDTO {
     private Collection<SmallCommandeProduitDTO> commandeProduits;
 
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date date;
 
     @Size(max = 20)

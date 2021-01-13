@@ -22,7 +22,7 @@ public class CommandeProduit implements Serializable {
     private Commande commande;
 
     @ManyToOne
-    @JoinColumn(name = "id_produits", nullable = false)
+    @JoinColumn(name = "id_produit", nullable = false)
     private Produit produit;
 
     @Column(nullable = false)

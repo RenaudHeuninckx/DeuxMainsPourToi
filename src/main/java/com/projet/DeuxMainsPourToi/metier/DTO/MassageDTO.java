@@ -1,5 +1,6 @@
 package com.projet.DeuxMainsPourToi.metier.DTO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,9 +25,10 @@ public class MassageDTO {
     @Size(max = 255)
     private String description;
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "hh:mm")
     private Time duree;
     @NotNull
-    private float prix;
+    private double prix;
     private Collection<SmallPlanningDTO> plannings;
     private Collection<SmallCommentMassageDTO> commentMassages;
 }

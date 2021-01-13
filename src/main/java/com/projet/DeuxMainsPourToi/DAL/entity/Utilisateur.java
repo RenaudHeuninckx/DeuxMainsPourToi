@@ -78,7 +78,7 @@ public class Utilisateur implements Serializable {
     @Past
     private Date dateNaiss;
 
-    @Column(columnDefinition = "boolean default false")
+    @Column(columnDefinition = "BIT default 0")
     private boolean admin;
 
     @Column(nullable = false)

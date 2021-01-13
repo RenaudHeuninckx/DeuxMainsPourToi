@@ -28,7 +28,7 @@ public class Produit implements Serializable {
     private String description;
 
     @Column(nullable = false, precision=5, scale=2)
-    private float prix;
+    private double prix;
 
     @OneToMany(mappedBy = "produit")
     private Collection<CommandeProduit> commandeProduits;

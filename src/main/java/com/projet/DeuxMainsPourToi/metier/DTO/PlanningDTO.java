@@ -1,5 +1,6 @@
 package com.projet.DeuxMainsPourToi.metier.DTO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +17,7 @@ public class PlanningDTO {
     private SmallUtilisateurDTO utilisateur;
     private SmallMassageDTO massage;
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm a z")
     private Date rendezVous;
     @Size(max = 255)
     private String commentaire;

@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Time;
 import java.util.Collection;
 
@@ -36,7 +37,7 @@ public class Massage implements Serializable {
     private Time duree;
 
     @Column(nullable = false, precision=5, scale=2)
-    private float prix;
+    private double prix;
 
     @OneToMany(mappedBy = "massage")
     private Collection<Planning> plannings;

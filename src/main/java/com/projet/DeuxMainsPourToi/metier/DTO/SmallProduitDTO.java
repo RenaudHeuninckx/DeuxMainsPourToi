@@ -11,5 +11,5 @@ public class SmallProduitDTO {
     private int id;
     private String type;
     private String description;
-    private float prix;
+    private double prix;
 }
