@@ -21,8 +21,9 @@ public class ProduitController {
     }
 
     @PostMapping
-    public void create(@RequestBody ProduitDTO toCreate) throws ElementAlreadyExistException{
+    public ResponseEntity<String> create(@RequestBody ProduitDTO toCreate) throws ElementAlreadyExistException{
         service.create(toCreate);
+        return ResponseEntity.ok("Produit ajouté.");
     }
 
     @GetMapping

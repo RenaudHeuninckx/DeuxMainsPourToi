@@ -21,8 +21,9 @@ public class UtilisateurController {
     }
 
     @PostMapping
-    public void create(@RequestBody UtilisateurDTO toCreate) throws ElementAlreadyExistException {
+    public ResponseEntity<String> create(@RequestBody UtilisateurDTO toCreate) throws ElementAlreadyExistException {
         service.create(toCreate);
+        return ResponseEntity.ok("Utilisateur ajouté.");
     }
 
     @GetMapping
