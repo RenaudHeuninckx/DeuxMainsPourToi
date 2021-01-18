@@ -9,6 +9,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 
@@ -52,7 +53,7 @@ public class UtilisateurDTO {
     @Size(max = 100)
     private String complAdr;
     @Past
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH-mm")
     private Date dateNaiss;
     private boolean admin;
     @NotNull

@@ -76,15 +76,18 @@ public class Utilisateur implements Serializable {
 
     @Column(name = "date_de_naiss")
     @Past
+    @Temporal(TemporalType.DATE)
     private Date dateNaiss;
 
     @Column(columnDefinition = "BIT default 0")
     private boolean admin;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date inscrit;
 
     @Column
+    @Temporal(TemporalType.DATE)
     private Date supprime;
 
     @OneToMany(mappedBy = "utilisateur")

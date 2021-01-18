@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -58,5 +60,13 @@ public class UtilisateurService implements CrudService<UtilisateurDTO, Integer> 
         if(!repoUtilisateur.existsById(toDelete))
             throw new UtilisateurNotFoundException(toDelete);
         repoUtilisateur.deleteById(toDelete);
+    }
+
+    public List<UtilisateurDTO> getByInscrit(Date date) {
+        return repoUtilisateur.findByInscrit(date).stream().map(mapperUtilisateur::toDTO).collect(Collectors.toList());
+    }
+
+    public List<UtilisateurDTO> getAllByInscrit(Date date) {
+        return repoUtilisateur.getAllByInscrit(date).stream().map(mapperUtilisateur::toDTO).collect(Collectors.toList());
     }
 }

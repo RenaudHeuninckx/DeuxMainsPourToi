@@ -37,7 +37,7 @@ public class PlanningController {
         return ResponseEntity.ok(service.getOne(id));
     }
 
-    @PostMapping
+    @PutMapping
     public ResponseEntity<String> update(@RequestBody PlanningDTO toUpdate) throws ElementNotFoundException{
         service.update(toUpdate);
         return ResponseEntity.ok("Planning mis à jour.");

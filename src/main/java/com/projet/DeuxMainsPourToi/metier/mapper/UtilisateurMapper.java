@@ -34,7 +34,7 @@ public class UtilisateurMapper implements Mapper<UtilisateurDTO, Utilisateur> {
         DTO.setPrenom(entity.getPrenom());
         DTO.setPseudo(entity.getPseudo());
         DTO.setEmail(entity.getEmail());
-        DTO.setPassword(entity.getPassword());
+        DTO.setPassword(null);
         DTO.setTel(entity.getTel());
         DTO.setGsm(entity.getGsm());
         DTO.setRue(entity.getRue());
