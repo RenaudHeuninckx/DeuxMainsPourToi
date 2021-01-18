@@ -16,6 +16,7 @@ public class SmallCommandeMapper implements Mapper<SmallCommandeDTO, Commande> {
 
         DTO.setId(entity.getId());
         DTO.setDate(entity.getDate());
+        DTO.setHeure(entity.getHeure());
         DTO.setMoyenPaiement(entity.getMoyenPaiement());
         DTO.setStatusPaiement(entity.getStatusPaiement());
         DTO.setStatusCommande(entity.getStatusCommande());
@@ -32,6 +33,7 @@ public class SmallCommandeMapper implements Mapper<SmallCommandeDTO, Commande> {
 
         entity.setId(DTO.getId());
         entity.setDate(DTO.getDate());
+        entity.setHeure(DTO.getHeure());
         entity.setMoyenPaiement(DTO.getMoyenPaiement());
         entity.setStatusPaiement(DTO.getStatusPaiement());
         entity.setStatusCommande(DTO.getStatusCommande());

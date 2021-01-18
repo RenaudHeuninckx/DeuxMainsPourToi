@@ -17,8 +17,11 @@ public class PlanningDTO {
     private SmallUtilisateurDTO utilisateur;
     private SmallMassageDTO massage;
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm a z")
-    private Date rendezVous;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date rendezVousDate;
+    @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
+    private Date rendezVousHeure;
     @Size(max = 255)
     private String commentaire;
 }

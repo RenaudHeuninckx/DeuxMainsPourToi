@@ -14,7 +14,8 @@ public class SmallPlanningMapper implements Mapper<SmallPlanningDTO, Planning> {
         SmallPlanningDTO DTO = new SmallPlanningDTO();
 
         DTO.setId(entity.getId());
-        DTO.setRendezVous(entity.getRendezVous());
+        DTO.setRendezVousDate(entity.getRendezVousDate());
+        DTO.setRendezVousHeure(entity.getRendezVousHeure());
         DTO.setCommentaire(entity.getCommentaire());
 
         return DTO;
@@ -28,7 +29,8 @@ public class SmallPlanningMapper implements Mapper<SmallPlanningDTO, Planning> {
         Planning entity = new Planning();
 
         entity.setId(DTO.getId());
-        entity.setRendezVous(DTO.getRendezVous());
+        entity.setRendezVousDate(DTO.getRendezVousDate());
+        entity.setRendezVousHeure(DTO.getRendezVousHeure());
         entity.setCommentaire(DTO.getCommentaire());
 
         return entity;

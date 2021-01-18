@@ -27,8 +27,13 @@ public class Planning implements Serializable {
     @JoinColumn(name = "id_massage", nullable = false)
     private Massage massage;
 
-    @Column(name = "rendez_vous", nullable = false)
-    private Date rendezVous;
+    @Column(name = "rendez_vous_date", nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date rendezVousDate;
+
+    @Column(name = "rendez_vous_heure", nullable = false)
+    @Temporal(TemporalType.TIME)
+    private Date rendezVousHeure;
 
     @Column
     @Size(max = 255)

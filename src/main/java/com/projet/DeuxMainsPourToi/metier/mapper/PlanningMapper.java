@@ -28,7 +28,8 @@ public class PlanningMapper implements Mapper<PlanningDTO, Planning> {
         DTO.setId(entity.getId());
         DTO.setUtilisateur(mapperUtilisateur.toDTO(entity.getUtilisateur()));
         DTO.setMassage(mapperMassage.toDTO(entity.getMassage()));
-        DTO.setRendezVous(entity.getRendezVous());
+        DTO.setRendezVousDate(entity.getRendezVousDate());
+        DTO.setRendezVousHeure(entity.getRendezVousHeure());
         DTO.setCommentaire(entity.getCommentaire());
 
         return DTO;
@@ -44,7 +45,8 @@ public class PlanningMapper implements Mapper<PlanningDTO, Planning> {
         entity.setId(DTO.getId());
         entity.setUtilisateur(mapperUtilisateur.toEntity(DTO.getUtilisateur()));
         entity.setMassage(mapperMassage.toEntity(DTO.getMassage()));
-        entity.setRendezVous(DTO.getRendezVous());
+        entity.setRendezVousDate(DTO.getRendezVousDate());
+        entity.setRendezVousHeure(DTO.getRendezVousHeure());
         entity.setCommentaire(DTO.getCommentaire());
 
         return entity;

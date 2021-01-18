@@ -24,6 +24,10 @@ public class CommandeDTO {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date date;
 
+    @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
+    private Date heure;
+
     @Size(max = 20)
     private String moyenPaiement;
 

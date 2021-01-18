@@ -13,6 +13,7 @@ public class SmallCommandeDTO {
 
     private int id;
     private Date date;
+    private Date heure;
     private String moyenPaiement;
     private String statusPaiement;
     private String statusCommande;

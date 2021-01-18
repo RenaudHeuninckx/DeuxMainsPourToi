@@ -33,6 +33,7 @@ public class CommandeMapper implements Mapper<CommandeDTO, Commande> {
             DTO.setCommandeProduits(entity.getCommandeProduits().stream()
                     .map(mapperCommandeProduit::toDTO).collect(Collectors.toList()));
         DTO.setDate(entity.getDate());
+        DTO.setHeure(entity.getHeure());
         DTO.setMoyenPaiement(entity.getMoyenPaiement());
         DTO.setStatusPaiement(entity.getStatusPaiement());
         DTO.setStatusCommande(entity.getStatusCommande());
@@ -53,6 +54,7 @@ public class CommandeMapper implements Mapper<CommandeDTO, Commande> {
             entity.setCommandeProduits(DTO.getCommandeProduits().stream()
                     .map(mapperCommandeProduit::toEntity).collect(Collectors.toList()));
         entity.setDate(DTO.getDate());
+        entity.setHeure(DTO.getHeure());
         entity.setMoyenPaiement(DTO.getMoyenPaiement());
         entity.setStatusPaiement(DTO.getStatusPaiement());
         entity.setStatusCommande(DTO.getStatusCommande());

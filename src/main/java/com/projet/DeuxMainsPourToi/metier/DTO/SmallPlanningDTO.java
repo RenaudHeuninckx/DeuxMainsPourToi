@@ -11,6 +11,7 @@ import java.util.Date;
 public class SmallPlanningDTO {
 
     private int id;
-    private Date rendezVous;
+    private Date rendezVousDate;
+    private Date rendezVousHeure;
     private String commentaire;
 }

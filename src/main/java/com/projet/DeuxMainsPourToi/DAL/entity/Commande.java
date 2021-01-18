@@ -29,7 +29,12 @@ public class Commande implements Serializable {
     private Collection<CommandeProduit> commandeProduits;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIME)
+    private Date heure;
 
     @Column(name = "moyen_paiement")
     @Size(max = 20)
