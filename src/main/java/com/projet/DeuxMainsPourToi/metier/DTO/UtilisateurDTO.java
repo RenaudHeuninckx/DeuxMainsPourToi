@@ -31,19 +31,14 @@ public class UtilisateurDTO {
     @Size(max = 100)
     @Email
     private String email;
-    @NotNull
-    private byte[] password;
+    private String password;
     @Size(max = 20)
     private String tel;
     @Size(max = 20)
     private String gsm;
     @NotNull
     @Size(max = 50)
-    private String rue;
-    @Size(max = 20)
-    private String num;
-    @Size(max = 20)
-    private String boite;
+    private String adresse;
     @NotNull
     @Size(max = 20)
     private String cp;

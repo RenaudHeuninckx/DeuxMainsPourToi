@@ -34,12 +34,10 @@ public class UtilisateurMapper implements Mapper<UtilisateurDTO, Utilisateur> {
         DTO.setPrenom(entity.getPrenom());
         DTO.setPseudo(entity.getPseudo());
         DTO.setEmail(entity.getEmail());
-        DTO.setPassword(null);
+        DTO.setPassword(entity.getPassword());
         DTO.setTel(entity.getTel());
         DTO.setGsm(entity.getGsm());
-        DTO.setRue(entity.getRue());
-        DTO.setNum(entity.getNum());
-        DTO.setBoite(entity.getBoite());
+        DTO.setAdresse(entity.getAdresse());
         DTO.setCp(entity.getCp());
         DTO.setLoc(entity.getLoc());
         DTO.setComplAdr(entity.getComplAdr());
@@ -78,9 +76,7 @@ public class UtilisateurMapper implements Mapper<UtilisateurDTO, Utilisateur> {
         entity.setPassword(DTO.getPassword());
         entity.setTel(DTO.getTel());
         entity.setGsm(DTO.getGsm());
-        entity.setRue(DTO.getRue());
-        entity.setNum(DTO.getNum());
-        entity.setBoite(DTO.getBoite());
+        entity.setAdresse(DTO.getAdresse());
         entity.setCp(DTO.getCp());
         entity.setLoc(DTO.getLoc());
         entity.setComplAdr(DTO.getComplAdr());

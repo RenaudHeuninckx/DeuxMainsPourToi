@@ -21,9 +21,7 @@ public class SmallUtilisateurMapper implements Mapper<SmallUtilisateurDTO, Utili
         DTO.setPassword(entity.getPassword());
         DTO.setTel(entity.getTel());
         DTO.setGsm(entity.getGsm());
-        DTO.setRue(entity.getRue());
-        DTO.setNum(entity.getNum());
-        DTO.setBoite(entity.getBoite());
+        DTO.setAdresse(entity.getAdresse());
         DTO.setCp(entity.getCp());
         DTO.setLoc(entity.getLoc());
         DTO.setComplAdr(entity.getComplAdr());
@@ -50,9 +48,7 @@ public class SmallUtilisateurMapper implements Mapper<SmallUtilisateurDTO, Utili
         entity.setPassword(DTO.getPassword());
         entity.setTel(DTO.getTel());
         entity.setGsm(DTO.getGsm());
-        entity.setRue(DTO.getRue());
-        entity.setNum(DTO.getNum());
-        entity.setBoite(DTO.getBoite());
+        entity.setAdresse(DTO.getAdresse());
         entity.setCp(DTO.getCp());
         entity.setLoc(DTO.getLoc());
         entity.setComplAdr(DTO.getComplAdr());

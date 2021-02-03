@@ -31,7 +31,9 @@ public class DeuxMainsPourToiApplication {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 
-			http.authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated().and().csrf().disable();
+			http.csrf().disable().cors().and()
+					.authorizeRequests().antMatchers("/**")
+					.permitAll().anyRequest().authenticated();
 		}
 
 	}

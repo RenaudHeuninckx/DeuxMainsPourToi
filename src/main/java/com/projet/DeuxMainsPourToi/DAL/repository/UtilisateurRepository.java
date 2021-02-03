@@ -10,4 +10,5 @@ import java.util.List;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur,Integer> {
     List<Utilisateur> findByInscrit(Date date);
     List<Utilisateur> getAllByInscrit(Date date);
+    Utilisateur findByEmail(String email);
 }

@@ -17,12 +17,10 @@ public class SmallUtilisateurDTO {
     private String prenom;
     private String pseudo;
     private String email;
-    private byte[] password;
+    private String password;
     private String tel;
     private String gsm;
-    private String rue;
-    private String num;
-    private String boite;
+    private String adresse;
     private String cp;
     private String loc;
     private String complAdr;

@@ -40,7 +40,7 @@ public class Utilisateur implements Serializable {
     private String email;
 
     @Column(nullable = false, columnDefinition = "blob")
-    private byte[] password;
+    private String password;
 
     @Column
     @Size(max = 20)
@@ -52,15 +52,7 @@ public class Utilisateur implements Serializable {
 
     @Column(nullable = false)
     @Size(max = 50)
-    private String rue;
-
-    @Column
-    @Size(max = 20)
-    private String num;
-
-    @Column
-    @Size(max = 20)
-    private String boite;
+    private String adresse;
 
     @Column(nullable = false)
     @Size(max = 20)

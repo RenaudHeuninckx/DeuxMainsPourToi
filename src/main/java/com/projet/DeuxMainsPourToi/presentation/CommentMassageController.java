@@ -4,6 +4,7 @@ import com.projet.DeuxMainsPourToi.Exception.ElementAlreadyExistException;
 import com.projet.DeuxMainsPourToi.Exception.ElementNotFoundException;
 import com.projet.DeuxMainsPourToi.metier.DTO.CommentMassageDTO;
 import com.projet.DeuxMainsPourToi.metier.DTO.Container.CommentMassageContainer;
+import com.projet.DeuxMainsPourToi.metier.DTO.MassageDTO;
 import com.projet.DeuxMainsPourToi.metier.service.CommentMassageService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,12 @@ public class CommentMassageController {
     public ResponseEntity<CommentMassageContainer> getALl(){
         List<CommentMassageDTO> list = service.getAll();
         return ResponseEntity.ok(new CommentMassageContainer(list, list.size()));
+    }
+
+    @GetMapping("/massage/{id}")
+    public ResponseEntity<CommentMassageContainer> getAllByMassageMassageID(@PathVariable int id){
+        List<CommentMassageDTO> list = service.getAllByMassageIdMassage(id);
+        return ResponseEntity.ok(new CommentMassageContainer( list, list.size()));
     }
 
     @GetMapping("/{id}")
