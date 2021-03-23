@@ -48,13 +48,13 @@ public class UtilisateurDTO {
     @Size(max = 100)
     private String complAdr;
     @Past
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH-mm")
+    @JsonFormat( pattern = "yyyy-MM-dd")
     private Date dateNaiss;
     private boolean admin;
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat( pattern = "yyyy-MM-dd")
     private Date inscrit;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat( pattern = "yyyy-MM-dd")
     private Date supprime;
     private Collection<SmallPlanningDTO> plannings;
     private Collection<SmallCommandeDTO> commandes;

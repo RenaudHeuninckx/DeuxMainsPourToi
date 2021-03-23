@@ -18,6 +18,6 @@ public class CommentMassageDTO {
     @NotNull
     private String description;
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat( pattern = "yyyy-MM-dd")
     private Date date;
 }

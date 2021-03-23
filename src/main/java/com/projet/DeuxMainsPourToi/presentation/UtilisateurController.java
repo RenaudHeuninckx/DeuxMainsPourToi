@@ -2,7 +2,6 @@ package com.projet.DeuxMainsPourToi.presentation;
 
 import com.projet.DeuxMainsPourToi.Exception.*;
 import com.projet.DeuxMainsPourToi.metier.DTO.Container.UtilisateurContainer;
-import com.projet.DeuxMainsPourToi.metier.DTO.InfoLoginDTO;
 import com.projet.DeuxMainsPourToi.metier.DTO.UpdPwdDTO;
 import com.projet.DeuxMainsPourToi.metier.DTO.UtilisateurDTO;
 import com.projet.DeuxMainsPourToi.metier.service.UtilisateurService;
@@ -23,8 +22,6 @@ public class UtilisateurController {
     public UtilisateurController(UtilisateurService service) {
         this.service = service;
     }
-
-
 
     @PostMapping
     public ResponseEntity<String> create(@RequestBody UtilisateurDTO toCreate) throws ElementAlreadyExistException, InputNotUniqueException {
@@ -61,12 +58,9 @@ public class UtilisateurController {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<InfoLoginDTO> getInfoLogin(@RequestParam("email") String email) throws EmailNotFoundException {
-        InfoLoginDTO infoLoginDTO = new InfoLoginDTO();
+    public ResponseEntity<UtilisateurDTO> getInfoLogin(@RequestParam("email") String email) throws EmailNotFoundException {
         UtilisateurDTO utilisateurDTO = service.findByEmail(email);
-        infoLoginDTO.setPassword(utilisateurDTO.getPassword());
-        infoLoginDTO.setAdmin(utilisateurDTO.isAdmin());
-        return ResponseEntity.ok(infoLoginDTO);
+        return ResponseEntity.ok(utilisateurDTO);
     }
 
     @PutMapping
