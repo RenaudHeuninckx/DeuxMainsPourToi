@@ -59,4 +59,11 @@ public class CommentProduitService implements CrudService<CommentProduitDTO,Inte
             throw new CommentProduitNotFoundException(toDelete);
         repoCommentProduit.deleteById(toDelete);
     }
+
+    public List<CommentProduitDTO> getAllByProduitIdProduit(int id){
+        return repoCommentProduit.getAllByProduitId(id)
+                .stream()
+                .map(mapperCommentProduit::toDTO)
+                .collect(Collectors.toList());
+    }
 }
