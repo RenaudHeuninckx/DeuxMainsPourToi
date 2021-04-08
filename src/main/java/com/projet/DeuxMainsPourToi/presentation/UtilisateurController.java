@@ -2,6 +2,8 @@ package com.projet.DeuxMainsPourToi.presentation;
 
 import com.projet.DeuxMainsPourToi.Exception.*;
 import com.projet.DeuxMainsPourToi.metier.DTO.Container.UtilisateurContainer;
+import com.projet.DeuxMainsPourToi.metier.DTO.InfoLoginDTO;
+import com.projet.DeuxMainsPourToi.metier.DTO.SmallUtilisateurDTO;
 import com.projet.DeuxMainsPourToi.metier.DTO.UpdPwdDTO;
 import com.projet.DeuxMainsPourToi.metier.DTO.UtilisateurDTO;
 import com.projet.DeuxMainsPourToi.metier.service.UtilisateurService;
@@ -22,6 +24,8 @@ public class UtilisateurController {
     public UtilisateurController(UtilisateurService service) {
         this.service = service;
     }
+
+
 
     @PostMapping
     public ResponseEntity<String> create(@RequestBody UtilisateurDTO toCreate) throws ElementAlreadyExistException, InputNotUniqueException {
@@ -58,9 +62,26 @@ public class UtilisateurController {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<UtilisateurDTO> getInfoLogin(@RequestParam("email") String email) throws EmailNotFoundException {
+    public ResponseEntity<SmallUtilisateurDTO> getInfoLogin(@RequestParam("email") String email) throws EmailNotFoundException {
+        SmallUtilisateurDTO smallUtilisateurDTO = new SmallUtilisateurDTO();
         UtilisateurDTO utilisateurDTO = service.findByEmail(email);
-        return ResponseEntity.ok(utilisateurDTO);
+        smallUtilisateurDTO.setId(utilisateurDTO.getId());
+        smallUtilisateurDTO.setNom(utilisateurDTO.getNom());
+        smallUtilisateurDTO.setPrenom(utilisateurDTO.getPrenom());
+        smallUtilisateurDTO.setPseudo(utilisateurDTO.getPseudo());
+        smallUtilisateurDTO.setEmail(utilisateurDTO.getEmail());
+        smallUtilisateurDTO.setPassword(utilisateurDTO.getPassword());
+        smallUtilisateurDTO.setTel(utilisateurDTO.getTel());
+        smallUtilisateurDTO.setGsm(utilisateurDTO.getGsm());
+        smallUtilisateurDTO.setAdresse(utilisateurDTO.getAdresse());
+        smallUtilisateurDTO.setCp(utilisateurDTO.getCp());
+        smallUtilisateurDTO.setLoc(utilisateurDTO.getLoc());
+        smallUtilisateurDTO.setComplAdr(utilisateurDTO.getComplAdr());
+        smallUtilisateurDTO.setDateNaiss(utilisateurDTO.getDateNaiss());
+        smallUtilisateurDTO.setAdmin(utilisateurDTO.isAdmin());
+        smallUtilisateurDTO.setInscrit(utilisateurDTO.getInscrit());
+        smallUtilisateurDTO.setSupprime(utilisateurDTO.getSupprime());
+        return ResponseEntity.ok(smallUtilisateurDTO);
     }
 
     @PutMapping

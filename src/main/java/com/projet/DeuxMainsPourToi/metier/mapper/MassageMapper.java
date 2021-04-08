@@ -45,6 +45,23 @@ public class MassageMapper implements Mapper<MassageDTO, Massage> {
 
     @Override
     public Massage toEntity(MassageDTO DTO) {
-        return null;
+
+        if ( DTO == null ) return null;
+
+        Massage entity = new Massage();
+
+        entity.setId(DTO.getId());
+        entity.setNom(DTO.getNom());
+        entity.setType(DTO.getType());
+        entity.setDuree(DTO.getDuree());
+        entity.setDescription(DTO.getDescription());
+        entity.setPrix(DTO.getPrix());
+        if (DTO.getPlannings() != null)
+            entity.setPlannings(DTO.getPlannings().stream()
+                    .map(mapperPlanning::toEntity).collect(Collectors.toList()));
+        if (DTO.getCommentMassages() != null)
+            entity.setCommentMassages(DTO.getCommentMassages().stream()
+                    .map(mapperCommentMassage::toEntity).collect(Collectors.toList()));
+        return entity;
     }
 }

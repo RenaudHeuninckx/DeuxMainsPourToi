@@ -18,7 +18,6 @@ public class MassageDTO {
     @NotNull
     @Size(max = 50)
     private String nom;
-    @NotNull
     @Size(max = 20)
     private String type;
     @NotNull

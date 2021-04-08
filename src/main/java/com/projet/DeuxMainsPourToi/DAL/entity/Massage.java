@@ -25,7 +25,7 @@ public class Massage implements Serializable {
     @Size(max = 50)
     private String nom;
 
-    @Column(nullable = false)
+    @Column
     @Size(max = 20)
     private String type;
 
