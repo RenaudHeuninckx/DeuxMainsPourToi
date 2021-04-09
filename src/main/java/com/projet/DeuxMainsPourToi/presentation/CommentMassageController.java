@@ -37,7 +37,6 @@ public class CommentMassageController {
     @GetMapping("/massage/{id}")
     public ResponseEntity<CommentMassageContainer> getAllByMassageMassageID(@PathVariable int id){
         List<CommentMassageDTO> list = service.getAllByMassageIdMassage(id);
-        System.out.println(list);
         return ResponseEntity.ok(new CommentMassageContainer( list, list.size()));
     }
 
